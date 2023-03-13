@@ -73,20 +73,33 @@ namespace TodoApi.Controllers
         [HttpPost]
         public async Task<ActionResult<TodoItemDTO>> CreateTodoItem(TodoItemDTO todoItemDTO)
         {
-            var todoItem = new TodoItem
+            try
             {
-                IsComplete = todoItemDTO.IsComplete,
-                Name = todoItemDTO.Name,
-                Details = todoItemDTO.Details
-            };
+                if(todoItemDTO == null)
+                {
+                    return BadRequest();
+                }
+                var todoItem = new TodoItem
+                {
+                    IsComplete = todoItemDTO.IsComplete,
+                    Name = todoItemDTO.Name,
+                    Details = todoItemDTO.Details
+                };
 
-            _context.TodoItems.Add(todoItem);
-            await _context.SaveChangesAsync();
+                _context.TodoItems.Add(todoItem);
+                await _context.SaveChangesAsync();
 
-            return CreatedAtAction(
-                nameof(GetTodoItem),
-                new { id = todoItem.Id },
-                ItemToDTO(todoItem));
+                return CreatedAtAction(
+                    nameof(GetTodoItem),
+                    new { id = todoItem.Id },
+                    ItemToDTO(todoItem));
+            }
+            catch (Exception) 
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving data from the database");
+
+            }
+          
         }
 
         // DELETE: api/TodoItems/5

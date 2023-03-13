@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\blamboy\\Desktop\\Code\\to-do-application\\TodoApi\\TodoApi\\TodoApi.csproj": {}
+    "C:\\Users\\blamb\\OneDrive\\Documents\\Code\\todo\\TodoApi\\TodoApi\\TodoApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\blamboy\\Desktop\\Code\\to-do-application\\TodoApi\\TodoApi\\TodoApi.csproj": {
+    "C:\\Users\\blamb\\OneDrive\\Documents\\Code\\todo\\TodoApi\\TodoApi\\TodoApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\blamboy\\Desktop\\Code\\to-do-application\\TodoApi\\TodoApi\\TodoApi.csproj",
+        "projectUniqueName": "C:\\Users\\blamb\\OneDrive\\Documents\\Code\\todo\\TodoApi\\TodoApi\\TodoApi.csproj",
         "projectName": "TodoApi",
-        "projectPath": "C:\\Users\\blamboy\\Desktop\\Code\\to-do-application\\TodoApi\\TodoApi\\TodoApi.csproj",
-        "packagesPath": "C:\\Users\\blamboy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\blamboy\\Desktop\\Code\\to-do-application\\TodoApi\\TodoApi\\obj\\",
+        "projectPath": "C:\\Users\\blamb\\OneDrive\\Documents\\Code\\todo\\TodoApi\\TodoApi\\TodoApi.csproj",
+        "packagesPath": "C:\\Users\\blamb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\blamb\\OneDrive\\Documents\\Code\\todo\\TodoApi\\TodoApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\blamboy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\blamb\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -86,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
