@@ -8,5 +8,7 @@
         public bool IsComplete { get; set; }
         public string? Secret { get; set; }
         public string? Details { get; set; }
+        public DateTime Created { get; set; }
+        public int? Difficulty { get; set; }
     }
 }

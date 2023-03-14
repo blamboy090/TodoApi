@@ -56,6 +56,8 @@ namespace TodoApi.Controllers
             todoItem.Name = todoItemDTO.Name;
             todoItem.IsComplete = todoItemDTO.IsComplete;
             todoItem.Details = todoItemDTO.Details;
+            todoItem.Created = todoItemDTO.Created;
+            todoItem.Difficulty = todoItemDTO.Difficulty;
 
             try
             {
@@ -83,7 +85,9 @@ namespace TodoApi.Controllers
                 {
                     IsComplete = todoItemDTO.IsComplete,
                     Name = todoItemDTO.Name,
-                    Details = todoItemDTO.Details
+                    Details = todoItemDTO.Details,
+                    Created = todoItemDTO.Created,
+                    Difficulty = todoItemDTO.Difficulty
                 };
 
                 _context.TodoItems.Add(todoItem);
@@ -130,7 +134,9 @@ namespace TodoApi.Controllers
                 Id = todoItem.Id,
                 Name = todoItem.Name,
                 IsComplete = todoItem.IsComplete,
-                Details = todoItem.Details
+                Details = todoItem.Details,
+                Created = todoItem.Created,
+                Difficulty = todoItem.Difficulty
             };
     }
 }
