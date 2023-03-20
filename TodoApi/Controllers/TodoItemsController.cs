@@ -16,7 +16,7 @@ namespace TodoApi.Controllers
         }
 
         // Get Todos Based on user
-        [HttpGet]
+        [HttpGet("userId/{userId}")]
         public async Task<ActionResult<IEnumerable<TodoItemDTO>>> Get(int userId)
         {
             var todos = await _context.TodoItems
@@ -27,13 +27,13 @@ namespace TodoApi.Controllers
         }
 
         // GET: api/TodoItems
-    /*    [HttpGet]
+        [HttpGet]
         public async Task<ActionResult<IEnumerable<TodoItemDTO>>> GetTodoItems()
         {
             return await _context.TodoItems
                 .Select(x => ItemToDTO(x))
                 .ToListAsync();
-        }*/
+        }
 
         // GET: api/TodoItems/5
         [HttpGet("{id}")]
@@ -81,11 +81,16 @@ namespace TodoApi.Controllers
 
             return NoContent();
         }
+
         // POST: api/TodoItems
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<TodoItemDTO>> CreateTodoItem(TodoItemDTO todoItemDTO)
         {
+            var user = await _context.Users.FindAsync(todoItemDTO.UserId);
+            if (user == null)
+                return NotFound();
+
             try
             {
                 if(todoItemDTO == null)
@@ -98,7 +103,8 @@ namespace TodoApi.Controllers
                     Name = todoItemDTO.Name,
                     Details = todoItemDTO.Details,
                     Created = todoItemDTO.Created,
-                    Difficulty = todoItemDTO.Difficulty
+                    Difficulty = todoItemDTO.Difficulty,
+                    User = user,
                 };
 
                 _context.TodoItems.Add(todoItem);
@@ -147,7 +153,8 @@ namespace TodoApi.Controllers
                 IsComplete = todoItem.IsComplete,
                 Details = todoItem.Details,
                 Created = todoItem.Created,
-                Difficulty = todoItem.Difficulty
+                Difficulty = todoItem.Difficulty,
+                
             };
     }
 }

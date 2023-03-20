@@ -1,4 +1,6 @@
-﻿namespace TodoApi.Models
+﻿using System.Text.Json.Serialization;
+
+namespace TodoApi.Models
 { 
     public class TodoItem
     {
@@ -9,6 +11,7 @@
         public string? Details { get; set; }
         public DateTime Created { get; set; }
         public int? Difficulty { get; set; }
+        [JsonIgnore]
         public User User { get; set; }
         public int UserId { get; set; }
     }
