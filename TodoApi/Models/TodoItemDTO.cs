@@ -11,5 +11,7 @@ namespace TodoApi.Models
         public string? Details { get; set; }
         public DateTime Created { get; set; }
         public int? Difficulty { get; set; }
+        public User User { get; set; }
+        public int UserId { get; set; }
     }
 }

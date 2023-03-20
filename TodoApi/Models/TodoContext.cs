@@ -14,6 +14,8 @@ namespace TodoApi.Models
         {
             modelBuilder.UseSerialColumns();
         }
+        public DbSet<User> Users { get; set; }
         public DbSet<TodoItem> TodoItems { get; set; } = null!;
+       
     }
 }

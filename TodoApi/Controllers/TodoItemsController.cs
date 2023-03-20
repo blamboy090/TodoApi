@@ -15,14 +15,25 @@ namespace TodoApi.Controllers
             _context = context;
         }
 
-        // GET: api/TodoItems
+        // Get Todos Based on user
         [HttpGet]
+        public async Task<ActionResult<IEnumerable<TodoItemDTO>>> Get(int userId)
+        {
+            var todos = await _context.TodoItems
+                .Where(c => c.UserId == userId).Select(x => ItemToDTO(x))
+                .ToListAsync();
+
+            return todos;
+        }
+
+        // GET: api/TodoItems
+    /*    [HttpGet]
         public async Task<ActionResult<IEnumerable<TodoItemDTO>>> GetTodoItems()
         {
             return await _context.TodoItems
                 .Select(x => ItemToDTO(x))
                 .ToListAsync();
-        }
+        }*/
 
         // GET: api/TodoItems/5
         [HttpGet("{id}")]
