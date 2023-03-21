@@ -105,6 +105,7 @@ namespace TodoApi.Controllers
                     Details = todoItemDTO.Details,
                     Created = todoItemDTO.Created,
                     Difficulty = todoItemDTO.Difficulty,
+                    UserId = todoItemDTO.UserId,
                     User = user,
                 };
 
@@ -155,6 +156,7 @@ namespace TodoApi.Controllers
                 Details = todoItem.Details,
                 Created = todoItem.Created,
                 Difficulty = todoItem.Difficulty,
+                UserId = todoItem.UserId
                 
             };
     }
