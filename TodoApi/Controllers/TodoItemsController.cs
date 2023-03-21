@@ -20,7 +20,8 @@ namespace TodoApi.Controllers
         public async Task<ActionResult<IEnumerable<TodoItemDTO>>> Get(int userId)
         {
             var todos = await _context.TodoItems
-                .Where(c => c.UserId == userId).Select(x => ItemToDTO(x))
+                .Where(c => c.UserId == userId)
+                .Select(x => ItemToDTO(x))               
                 .ToListAsync();
 
             return todos;

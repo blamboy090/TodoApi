@@ -4,6 +4,8 @@
     {
         public int Id { get; set; }
         public string UserName { get; set; } = string.Empty;
-        public List<TodoItem>? TodoItems { get; set; }
+
+        //Navigation Properties
+        public virtual List<TodoItem> TodoItems { get; set; }
     }
 }

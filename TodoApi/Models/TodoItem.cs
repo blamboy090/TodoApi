@@ -12,7 +12,7 @@ namespace TodoApi.Models
         public DateTime Created { get; set; }
         public int? Difficulty { get; set; }
         [JsonIgnore]
-        public User User { get; set; }
+        public virtual User User { get; set; }
         public int UserId { get; set; }
     }
 }
